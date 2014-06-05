@@ -27,9 +27,12 @@ conf_prob = {
     'cloudy':{'walk':0.6,'shop':0.25,'clean':0.15}
 }
 
-observations = ['walk', 'shop', 'clean', 'clean', 'walk', 'walk']
+observations = ['walk', 'shop', 'clean', 'clean', 'walk', 'walk', 'walk', 'clean']                    
+#The iter_num is the iteration number in the EM algorithm
+iter_num = 50
 
-model = Model(states,observation,phi,trans_prob,conf_prob)
+model = Model(states,observation,phi,trans_prob,conf_prob,iter_num)
 
 print model.evaluate(observations)
 print model.decode(observations)
+
